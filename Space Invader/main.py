@@ -14,16 +14,16 @@ playerImg = pygame.image.load('space-invaders.png')
 playerX = 370
 playerY = 480
 
-def player():
-    screen.blit(playerImg,(playerX,playerY))
+def player(x,y):
+    screen.blit(playerImg,(x,y))
 #Game loop
 running = True
 while running:
+    screen.fill((0, 0, 0))  # RGB
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    screen.fill((0,0,0)) #RGB
-
-    player()
+    playerX += 0.1
+    player(playerX,playerY)
     pygame.display.update()
