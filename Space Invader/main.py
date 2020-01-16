@@ -1,4 +1,5 @@
 import pygame
+import random
 
 #initialize pygame
 pygame.init()
@@ -15,8 +16,16 @@ playerX = 370
 playerY = 480
 playerX_Change = 0
 
+enemyImg = pygame.image.load('ufo.png')
+enemyX = random.randint(0,800)
+enemyY = 50
+enemyX_Change = 0
+
 def player(x,y):
     screen.blit(playerImg,(x,y))
+
+def enermy(x,y):
+    screen.blit(enemyImg,(x,y))
 #Game loop
 running = True
 while running:
@@ -41,4 +50,5 @@ while running:
     elif playerX >= 736:
         playerX = 736
     player(playerX,playerY)
+    enermy(enemyX, enemyY)
     pygame.display.update()
